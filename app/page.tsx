@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import Image from "next/image";
 import Link from "next/link";
@@ -29,7 +28,7 @@ export default function Home() {
       />
       <h1 className="pt-4 text-4xl font-bold">Build. Automate. Iterate.</h1>
       <p className="text-gray-800">
-        Hey, I'm Eduardo Dusik. I'm building <a href="https://retorno.io" className="underline underline-offset-4 text-zinc-800 font-semibold">Retorno</a>, a micro-SaaS Copilot for
+        Hey, I&apos;m Eduardo Dusik. I&apos;m building <a href="https://retorno.io" className="underline underline-offset-4 text-zinc-800 font-semibold">Retorno</a>, a micro-SaaS Copilot for
         n8n, helping developers automate workflows effortlessly. I love micro-SaaS,
         indie hacking, and making things that scale.
       </p>
