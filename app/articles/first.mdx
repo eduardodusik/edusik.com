@@ -1,0 +1,119 @@
+export const metadata = {
+  title: 'Building a Modern Blog with Next.js and MDX',
+  description: 'A step-by-step guide on creating a performant blog using Next.js, MDX, and modern web development practices.',
+  date: '2024-03-20',
+  author: 'Eduardo Dusik',
+  tags: ['next.js', 'mdx', 'react', 'blog']
+}
+
+
+_Content written by AI just for testing purposes._
+
+# Building a Modern Blog with Next.js and MDX
+
+As a developer, I've always wanted to have my own space on the web where I could share my thoughts and experiences. After exploring various options, I decided to build my blog using Next.js and MDX, inspired by developers like [Lee Robinson](https://leerob.com/) who have created elegant, performant blogs using these technologies.
+
+## Why Next.js and MDX?
+
+Next.js has become my framework of choice for several reasons:
+
+- **Performance**: Built-in optimizations for images, fonts, and static generation
+- **Dynamic Routes**: Easy to create blog posts using file-system based routing
+- **SEO Friendly**: Excellent support for metadata and static generation
+- **Developer Experience**: Great developer tools and hot reload
+
+MDX adds another layer of power by allowing me to:
+- Write content in Markdown
+- Embed React components directly in my posts
+- Use JavaScript expressions and dynamic content
+
+## Setting Up the Blog
+
+The setup process was surprisingly straightforward. First, I installed the necessary dependencies:
+
+```bash
+npm install @next/mdx @mdx-js/loader @mdx-js/react @types/mdx
+```
+
+Then, I configured Next.js to handle MDX files by updating my `next.config.mjs`:
+
+```javascript
+import createMDX from '@next/mdx'
+
+const nextConfig = {
+  pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx']
+}
+
+const withMDX = createMDX({
+  // Optional: Configure plugins here
+})
+
+export default withMDX(nextConfig)
+```
+
+## The Power of Metadata
+
+One of the most powerful features is the metadata support. For each blog post, I can define metadata like this:
+
+```javascript
+export const metadata = {
+  title: 'My Blog Post',
+  description: 'An awesome post about tech',
+  date: '2024-03-20'
+}
+```
+
+This metadata serves multiple purposes:
+- **SEO optimization**: Next.js automatically generates proper meta tags
+- **Social sharing**: OpenGraph tags for better social media previews
+- **Content organization**: Easy to sort and filter posts
+
+## Dynamic Routes and Static Generation
+
+Next.js's dynamic routing is perfect for blogs. I structured my posts like this:
+
+```
+app/
+  blog/
+    [slug]/
+      page.tsx    // Dynamic route handler
+  articles/
+    first.mdx     // This post
+    second.mdx    // Another post
+```
+
+The `generateStaticParams` function ensures all posts are pre-rendered at build time:
+
+```typescript
+export async function generateStaticParams() {
+  // Get all post slugs
+  return [
+    { slug: 'first' },
+    { slug: 'second' }
+  ]
+}
+```
+
+## Performance Benefits
+
+By using Next.js's static generation:
+- Pages are generated at build time
+- Blazing fast page loads
+- Great SEO scores
+- Reduced server load
+
+## Styling and Components
+
+MDX lets me use React components right in my markdown, and I can use Tailwind CSS with the typography plugin for beautiful content styling. This gives me the flexibility to create rich, interactive content while maintaining a clean and professional look.
+
+## Conclusion
+
+Building a blog with Next.js and MDX has been a great experience. The combination provides:
+- Excellent developer experience
+- Great performance
+- SEO optimization out of the box
+- Flexibility to extend with React components
+
+If you're thinking about creating a blog, I highly recommend this stack. The [official Next.js MDX documentation](https://nextjs.org/docs/app/building-your-application/configuring/mdx) is an excellent resource to get started.
+
+Next up, I'll be sharing more about my development journey and technical insights. Stay tuned!
