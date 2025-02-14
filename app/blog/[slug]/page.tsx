@@ -51,7 +51,7 @@ export default async function Post(props: Props) {
     const { Content } = post
 
     return (
-        <div className="max-w-4xl mx-auto py-8 prose lg:prose-xl">
+        <div className="max-w-4xl mx-auto py-8 prose lg:prose-xl flex flex-col gap-4">
             <Content.default />
         </div>
     )
