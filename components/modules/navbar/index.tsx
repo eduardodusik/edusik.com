@@ -1,4 +1,3 @@
-import { m } from "motion/react"
 import Link from "next/link"
 
 const menuItems = [
@@ -10,10 +9,10 @@ const menuItems = [
         href: "/blog",
         name: "Blog"
     },
-    
+
 ]
 
-const Navbar = () => { 
+const Navbar = () => {
 
     return (
         <nav className="w-full py-6">
